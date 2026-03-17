@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const mysql = require('mysql2/promise');
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
@@ -11,7 +12,7 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Request Logger
 app.use((req, res, next) => {
