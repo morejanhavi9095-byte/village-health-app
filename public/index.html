@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Health Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Village Health Awareness / ग्राम आरोग्य जागरूकता</h1>
+            <nav>
+                <button onclick="showSection('home')">Home / होम</button>
+                <button onclick="showSection('precautions')">Precautions / सावधगिरी</button>
+                <button onclick="showSection('form')">Health Form / आरोग्य फॉर्म</button>
+                <button onclick="showSection('contacts')">Emergency / आणीबाणी</button>
+                <button onclick="showSection('patients')">View Patients / रुग्ण पहा</button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Home Section -->
+        <section id="home" class="active">
+            <h2>Welcome to Village Health Awareness / ग्राम आरोग्य जागरूकतेमध्ये स्वागत आहे</h2>
+            <div class="search-container">
+                <input type="text" id="disease-search" placeholder="Search Disease (e.g. Fever) / आजार शोधा (उदा. ताप)">
+                <button onclick="searchDisease()">Search / शोधा</button>
+            </div>
+            <p>Your health is our priority. Search for diseases to learn more about precautions and care.</p>
+        </section>
+
+        <!-- Precautions Section -->
+        <section id="precautions">
+            <h2 id="disease-title">Disease Info / आजाराची माहिती</h2>
+            <div id="disease-details" class="info-card">
+                <p>Please search for a disease on the home page.</p>
+            </div>
+        </section>
+
+        <!-- Health Form Section -->
+        <section id="form">
+            <h2>Health Form / आरोग्य फॉर्म</h2>
+            <form id="health-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Name / नाव:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Age / वय:</label>
+                    <input type="number" id="age" required>
+                </div>
+                <div class="form-group">
+                    <label>Weight / वजन (kg):</label>
+                    <input type="number" id="weight" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Photo Upload / फोटो अपलोड:</label>
+                    <input type="file" id="photo" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label>Health Issues / आरोग्याच्या तक्रारी:</label>
+                    <div class="checkboxes">
+                        <label><input type="checkbox" name="healthIssues" value="Fever"> Fever / ताप</label>
+                        <label><input type="checkbox" name="healthIssues" value="Cold"> Cold / सर्दी</label>
+                        <label><input type="checkbox" name="healthIssues" value="Cough"> Cough / खोकला</label>
+                        <label><input type="checkbox" name="healthIssues" value="Diabetes"> Diabetes / मधुमेह</label>
+                    </div>
+                </div>
+                <button type="submit">Submit / सबमिट करा</button>
+            </form>
+            <div id="form-msg"></div>
+        </section>
+
+        <!-- Emergency Contacts Section -->
+        <section id="contacts">
+            <h2>Emergency Contacts / आणीबाणीचे संपर्क</h2>
+            <table class="contacts-table">
+                <tr><th>Role / भूमिका</th><th>Contact / संपर्क</th></tr>
+                <tr><td>Sarpanch / सरपंच</td><td>9876543210</td></tr>
+                <tr><td>Up-Sarpanch / उप-सरपंच</td><td>9876543211</td></tr>
+                <tr><td>Ambulance / रुग्णवाहिका</td><td>102</td></tr>
+                <tr><td>Local Hospital / स्थानिक रुग्णालय</td><td>020-1234567</td></tr>
+                <tr><td>Police / पोलीस</td><td>100</td></tr>
+            </table>
+        </section>
+
+        <!-- View Patients Section -->
+        <section id="patients">
+            <h2>Submitted Patients / सबमिट केलेले रुग्ण</h2>
+            <div id="patients-list" class="patients-grid">
+                <!-- Loaded via JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
